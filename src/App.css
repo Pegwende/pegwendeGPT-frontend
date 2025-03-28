@@ -1,38 +1,78 @@
-.App {
+/* App Component Styles */
+.App-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.input-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.question-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: 2px solid #2c3e50;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.question-input:focus {
+  border-color: #3498db;
+}
+
+.ask-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
   color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.ask-button:hover {
+  background-color: #2980b9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.answer-container {
+  margin-top: 20px;
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.answer-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.answer-text {
+  font-size: 1.2rem;
+  color: #34495e;
 }
