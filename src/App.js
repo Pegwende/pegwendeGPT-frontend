@@ -10,26 +10,28 @@ function App() {
         setLoading(true);
         setAnswer(""); // Clear previous answer while loading
         try {
-            const response = await fetch(`http://localhost:8081/peggpt?question=${encodeURIComponent(question)}`);
+            const response = await fetch(`https://pegwendegpt-backend.onrender.com/workgpt?question=${encodeURIComponent(question)}`);
             const data = await response.json();
             setAnswer(data.answer);
         } catch (error) {
-            setAnswer("Failed to fetch answer. Please try again.");
+            setAnswer("Sorry Peg-AI is taking a break! Try again later.");
         }
         setLoading(false);
+    };
+
+    const handleFocus = () => {
+        // Clear the input text when the user clicks into the search box
+        if (question === "") return;
+        setQuestion(""); 
     };
 
     return (
         <div className="workgpt-container">
             <header className="header">
                 <h1>Peg-AI</h1>
-                <p>Get <b>Bible</b>-related answers instantly!</p>
+                <p>Get any <b>Proffessional</b>-related questions answers instantly!</p>
             </header>
             <main className="main-content">
-                <section className="evangelism-message">
-                    <h2>Jesus Loves You!</h2>
-                    <p>John 3:16</p>
-                </section>
                 <section className="input-container">
                     <input
                         type="text"
@@ -37,6 +39,7 @@ function App() {
                         onChange={(e) => setQuestion(e.target.value)}
                         placeholder="Ask Peg-AI..."
                         className="question-input"
+                        onFocus={handleFocus}  // Clear input text on focus
                     />
                     <button onClick={askGPT} className="ask-button" disabled={loading}>
                         {loading ? "Thinking..." : "Ask"}
@@ -52,9 +55,8 @@ function App() {
             </main>
             <footer className="footer">
                 <p>&copy; {new Date().getFullYear()} || Created By: Pegwende P Zabsore </p>
-                <p>Acknowlegment: Rafi Zabsore</p>
                 <nav className="footer-nav">
-                    <a href="https://www.facebook.com/aristide.zabsore" target="_blank" className="footer-link">Facebook</a>
+                    <a href="https://www.linkedin.com/in/pegwende-p-zabsore/" target="_blank" className="footer-link">LinkedIn</a>
                     <a href="#" target="_blank" className="footer-link">Instagram</a>
                     <a href="/contact" className="footer-link">Contact</a>
                 </nav>
