@@ -29,7 +29,7 @@ function App() {
         <div className="workgpt-container">
             <header className="header">
                 <h1>Peg-AI</h1>
-                <p>Get any <b>Proffessional</b>-related questions answers instantly!</p>
+                <p>Get any <b>professional</b>-related questions answered instantly!</p>
             </header>
             <main className="main-content">
                 <section className="input-container">
